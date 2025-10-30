@@ -5,11 +5,13 @@ import { TextInput, View } from "react-native";
 interface Props {
   placeholder: string;
   onPress?: () => void;
+  value?: string;
+  onChangeText?: (text: string) => void;
 }
 
-const SearchBar = ({ placeholder, onPress }: Props) => {
+const SearchBar = ({ placeholder, onPress, value, onChangeText }: Props) => {
   return (
-    <View className="flex-row items-center bg-dark-100 rounded-full px-5 py-4">
+    <View className="flex-row items-center bg-dark-200 rounded-full px-5 py-2">
       <Ionicons
         name="search-outline"
         size={20}
@@ -19,7 +21,8 @@ const SearchBar = ({ placeholder, onPress }: Props) => {
       <TextInput
         onPress={onPress}
         placeholder={placeholder}
-        onChangeText={() => {}}
+        value={value}
+        onChangeText={onChangeText}
         placeholderTextColor="#a8b5db"
         className="flex-1 ml-2 text-white"
       />
@@ -28,3 +31,7 @@ const SearchBar = ({ placeholder, onPress }: Props) => {
 };
 
 export default SearchBar;
+
+// api token=   eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjQ1ZDgzMThlMzkyNjc0NDU2OTk0ZjI5MmZlNDM3OSIsIm5iZiI6MTc2MTcyMTEwMS43MDIwMDAxLCJzdWIiOiI2OTAxYmIwZDgyNmJkYjg3MjhiNjRjNTkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.RWzXW2MRZfGosuvlkyoNNQhywVGSCYatmWjZ-UeV2-4
+
+// b645d8318e392674456994f292fe4379
